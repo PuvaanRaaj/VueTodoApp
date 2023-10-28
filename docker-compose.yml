@@ -1,0 +1,17 @@
+version: "3.5"
+services:
+  app:
+    image: node:alpine
+    working_dir: /app/src  # Set working directory to the src directory
+    volumes:
+      - ${PWD}:/app
+    ports:
+      - 5173:5173  # Specify the desired port here
+    environment:
+      - PORT=5173  # Set the PORT environment variable to your desired port
+    entrypoint:
+      - /bin/sh
+      - -c
+      - |
+        npm install  # Install project dependencies
+        npm run dev -- --port $PORT
