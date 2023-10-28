@@ -1,11 +1,13 @@
 <script setup>
 import { RouterView } from "vue-router";
 import TodoHeader from "./components/TodoHeader.vue";
+import TodoFooter from "./components/TodoFooter.vue";
 </script>
 
 <template>
   <TodoHeader />
   <RouterView />
+  <TodoFooter />
 </template>
 
 <style lang="scss">
